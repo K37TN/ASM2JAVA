@@ -12,34 +12,71 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Mã</th>
-        <th scope="col">Tên</th>
-        <th scope="col">Trạng thái</th>
-        <th scope="col">Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="x" items="${list}">
+
+<!-- Enhanced Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">MyApp</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/sanpham/list">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sanpham/add">Add Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sanpham/categories">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sanpham/reports">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/sanpham/contact">Contact</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <table class="table table-striped">
+        <thead>
         <tr>
-            <td>${x.id}</td>
-            <td>${x.ma}</td>
-            <td>${x.ten}</td>
-            <td>${x.trangThai ?"Còn":"Hết"}</td>
-            <td><a href="" type="button" class="btn btn-primary">Detail</a>
-                <a href="" type="button" class="btn btn-info">Edit</a>
-                <a href="" type="button" class="btn btn-danger">Remove</a></td>
-
+            <th scope="col">ID</th>
+            <th scope="col">Mã</th>
+            <th scope="col">Tên</th>
+            <th scope="col">Trạng thái</th>
+            <th scope="col">Action</th>
         </tr>
-    </c:forEach>
+        </thead>
+        <tbody>
+        <c:forEach var="x" items="${page.content}">
+            <tr>
+                <td>${x.id}</td>
+                <td>${x.ma}</td>
+                <td>${x.ten}</td>
+                <td>${x.trangThai ? "Còn" : "Hết"}</td>
+                <td>
+                    <a href="" type="button" class="btn btn-primary">Detail</a>
+                    <a href="" type="button" class="btn btn-info">Edit</a>
+                    <a href="" type="button" class="btn btn-danger">Remove</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 
-    </tbody>
-</table>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+    <div class="d-flex justify-content-center">
+        <a href="/sanpham/list" class="btn btn-secondary mx-1">First</a>
+        <a href="/sanpham/list?p=${page.first ? 0 : page.number - 1}" class="btn btn-secondary mx-1">Prev</a>
+        <a href="/sanpham/list?p=${page.last ? page.totalPages - 1 : page.number + 1}" class="btn btn-secondary mx-1">Next</a>
+        <a href="/sanpham/list?p=${page.totalPages - 1}" class="btn
