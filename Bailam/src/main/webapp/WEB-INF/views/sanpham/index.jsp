@@ -10,13 +10,14 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 </head>
 <body>
 
 <!-- Enhanced Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">MyApp</a>
+        <a class="navbar-brand" href="#"><img src="https://i.pinimg.com/736x/55/15/6d/55156dcf9b1b31041198fce6f98a8b46.jpg" width="40px" height="40px"style="border-radius: 30px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +49,7 @@
 </nav>
 
 <div class="container mt-4">
-    <table class="table table-striped">
+    <table class="table table-striped" style="background: darkgray">
         <thead>
         <tr>
             <th scope="col">ID</th>
@@ -79,4 +80,4 @@
         <a href="/sanpham/list" class="btn btn-secondary mx-1">First</a>
         <a href="/sanpham/list?p=${page.first ? 0 : page.number - 1}" class="btn btn-secondary mx-1">Prev</a>
         <a href="/sanpham/list?p=${page.last ? page.totalPages - 1 : page.number + 1}" class="btn btn-secondary mx-1">Next</a>
-        <a href="/sanpham/list?p=${page.totalPages - 1}" class="btn
+        <a href="/sanpham/list?p=${page.totalPages - 1}" class="btn btn-secondary mx-1">Last</a>
