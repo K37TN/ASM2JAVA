@@ -18,7 +18,7 @@ public class NhanVien {
     @Column(name = "ID")
     private Integer id;
     @Column(name = "Ma")
-    private Integer ma;
+    private String ma;
     @Column(name = "Ten")
     private String ten;
     @Column(name = "Tendangnhap")
