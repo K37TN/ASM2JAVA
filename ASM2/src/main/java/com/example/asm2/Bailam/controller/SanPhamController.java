@@ -16,6 +16,6 @@ public class SanPhamController {
     @GetMapping("/lost")
     public String showform(Model model){
         model.addAttribute("list",sanPhamService.getAll());
-        return "sanpham/trangchu";
+        return "Sanpham/index";
     }
 }
