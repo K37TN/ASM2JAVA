@@ -19,4 +19,10 @@ public class SanPhamController {
         model.addAttribute("page", sanphamService.getAllCategory(p));
         return "sanpham/index";
     }
+
+    @GetMapping("/detail")
+    public String showdetail(Model model,Integer id){
+        model.addAttribute("list",sanphamService.detail(id));
+        return "sanpham/detail";
+    }
 }

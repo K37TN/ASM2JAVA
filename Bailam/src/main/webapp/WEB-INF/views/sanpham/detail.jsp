@@ -48,39 +48,29 @@
     </div>
 </nav>
 
-<div class="container mt-4">
-    <table class="table table-striped" style="background: darkgray">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Mã</th>
-            <th scope="col">Tên</th>
-            <th scope="col">Trạng thái</th>
-            <th scope="col">Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach var="x" items="${page.content}">
-            <tr>
-                <td>${x.id}</td>
-                <td>${x.ma}</td>
-                <td>${x.ten}</td>
-                <td>${x.trangThai ? "Còn" : "Hết"}</td>
-                <td>
-                    <a href="/sanpham/detail?id=${x.id}" type="button" class="btn btn-primary">Detail</a>
-                    <a href="" type="button" class="btn btn-info">Edit</a>
-                    <a href="" type="button" class="btn btn-danger">Remove</a>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-
-    <div class="d-flex justify-content-center">
-        <a href="/sanpham/list" class="btn btn-secondary mx-1">First</a>
-        <a href="/sanpham/list?p=${page.first ? 0 : page.number - 1}" class="btn btn-secondary mx-1">Prev</a>
-        <a href="/sanpham/list?p=${page.last ? page.totalPages - 1 : page.number + 1}" class="btn btn-secondary mx-1">Next</a>
-        <a href="/sanpham/list?p=${page.totalPages - 1}" class="btn btn-secondary mx-1">Last</a>
+<form action="" method="post" class="container">
+    <div class="mb-3">
+        <label  class="form-label">Mã</label>
+        <input type="text" class="form-control" name="ma" value="${list.ma}" readonly>
     </div>
-</div>
+    <div class="mb-3">
+        <label  class="form-label">Tên</label>
+        <input type="text" class="form-control" name="ten" value="${list.ten}" readonly>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="trangThai" value="true" ${list.trangThai == "Còn" ? "" : "checked"} disabled>
+        <label class="form-check-label">
+            Còn
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="trangThai" value="false" ${list.trangThai == "Hết" ? "checked" : ""} disabled>
+        <label class="form-check-label">
+            Hết
+        </label>
+    </div>
+
+    <a href="/sanpham/list" class="btn btn-primary">Quay Lại</a>
+</form>
 </body>
