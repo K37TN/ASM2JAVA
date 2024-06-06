@@ -50,6 +50,10 @@
 
 <form action="" method="post" class="container">
     <div class="mb-3">
+        <label  class="form-label">ID</label>
+        <input type="text" class="form-control" name="id" value="${list.id}" readonly>
+    </div>
+    <div class="mb-3">
         <label  class="form-label">Mã</label>
         <input type="text" class="form-control" name="ma" value="${list.ma}" readonly>
     </div>
