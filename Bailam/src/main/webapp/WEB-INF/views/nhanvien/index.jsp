@@ -71,9 +71,9 @@
                 <td>${x.matKhau}</td>
                 <td>${x.trangThai?"Đang làm":"Đã nghỉ"}</td>
                 <td>
-                    <a href="" type="button" class="btn btn-success">ADD</a>
-                    <a href="" type="button" class="btn btn-primary">Detail</a>
-                    <a href="" type="button" class="btn btn-info">Edit</a>
+                    <a href="/nhanvien/showadd?id=${x.id}" type="button" class="btn btn-success">ADD</a>
+                    <a href="/nhanvien/detail?id=${x.id}" type="button" class="btn btn-primary">Detail</a>
+                    <a href="/nhanvien/showupdate?id=${x.id}" type="button" class="btn btn-info">Edit</a>
                     <a href="/nhanvien/delete?id=${x.id}" type="button" class="btn btn-danger">Remove</a>
                 </td>
             </tr>
