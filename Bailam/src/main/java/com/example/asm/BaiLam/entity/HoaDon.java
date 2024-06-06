@@ -6,7 +6,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,7 +26,7 @@ public class HoaDon {
     @Column(name = "Idnv")
     private Integer idnv;
     @Column(name = "Ngaymuahang")
-    private Date ngayMua;
+    private LocalDate ngayMua;
     @Column(name = "Trangthai")
     private Boolean trangThai;
 }
