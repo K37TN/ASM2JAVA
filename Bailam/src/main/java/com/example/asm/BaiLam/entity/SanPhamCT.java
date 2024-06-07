@@ -24,7 +24,7 @@ public class SanPhamCT {
     @Column(name = "IdSanPham")
     private Integer idsp;
     @Column(name = "MaSPCT")
-    private Integer maspct;
+    private String maspct;
     @Column(name = "SoLuong")
     private Integer soLuong;
     @Column(name = "DonGia")
