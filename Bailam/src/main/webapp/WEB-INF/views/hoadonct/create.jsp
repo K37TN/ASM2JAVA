@@ -17,7 +17,9 @@
 <!-- Enhanced Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="https://i.pinimg.com/736x/55/15/6d/55156dcf9b1b31041198fce6f98a8b46.jpg" width="40px" height="40px"style="border-radius: 30px;"></a>
+        <a class="navbar-brand" href="#"><img
+                src="https://i.pinimg.com/736x/55/15/6d/55156dcf9b1b31041198fce6f98a8b46.jpg" width="40px" height="40px"
+                style="border-radius: 30px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,19 +27,33 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/sanpham/list">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/sanpham/list">Sản Phẩm</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Thông tin HĐ - SP
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/hoadon/list">Hóa Đơn</a></li>
+                        <li><a class="dropdown-item" href="/hoadonct/list">Hóa đơn chi tiết</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/sanphamct/list">Sản Phẩm Chi Tiết</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/sanpham/add">Add Product</a>
+                    <a class="nav-link" href="/khachhang/list">Khách hàng</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/sanpham/categories">Categories</a>
+                    <a class="nav-link" href="/nhanvien/list">Nhân Viên</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/sanpham/reports">Reports</a>
+                    <a class="nav-link" href="/mausac/list">Mau Sac</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/sanpham/contact">Contact</a>
+                    <a class="nav-link" href="/kichthuoc/list">Kích thước</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -86,4 +102,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Thêm</button>
 </form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
